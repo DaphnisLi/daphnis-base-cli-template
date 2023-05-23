@@ -1,0 +1,81 @@
+{
+  "name": "daphnis-base-cli-template",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "build": "rm -rf dist && tsc -p ./tsconfig.build.json && rollup --config",
+    "commit-lint": "commitlint --from origin/master --to HEAD",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "lint": "eslint -c ./.eslintrc --ext .jsx,.js,.ts,.tsx src && stylelint 'src/**/*.(jsx|tsx|css|less)'",
+    "lint-fix": "eslint -c ./.eslintrc --ext .jsx,.js,.ts,.tsx src --fix && stylelint 'src/**/*.(jsx|tsx|css|less)' --fix",
+    "prettier": "prettier --write \"src/**/*.ts\"",
+    "release": "./scripts/release.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaphnisLi/daphnis-base-cli-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaphnisLi/daphnis-base-cli-template/issues"
+  },
+  "homepage": "https://github.com/DaphnisLi/daphnis-base-cli-template#readme",
+  "files": [
+    "package.json",
+    "README.md",
+    "dist"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@nicecode/changelog": "^0.2.0",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-typescript": "^11.1.1",
+    "@types/node": "^20.2.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.7",
+    "@typescript-eslint/parser": "^5.59.7",
+    "chalk": "^4.1.2",
+    "conventional-changelog-cli": "^2.2.2",
+    "dumi": "^2.2.0",
+    "eslint": "^8.41.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-config-standard-react": "^13.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "husky": "^8.0.3",
+    "inquirer": "^7.3.3",
+    "prettier": "^2.8.8",
+    "react": "^18.2.0",
+    "rollup": "^3.23.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "semver": "^7.5.1",
+    "shelljs": "^0.8.5",
+    "standard": "^17.0.0",
+    "stylelint": "^15.6.2",
+    "stylelint-config-standard": "^33.0.0",
+    "typescript": "^5.0.4"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "sideEffects": [
+    "./src/**"
+  ],
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.umd.js"
+  },
+  "typings": "dist/index.d.ts"
+}
